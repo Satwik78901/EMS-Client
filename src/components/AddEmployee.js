@@ -1,29 +1,59 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import EmployeeService from '../services/EmployeeService';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useNavigate, useParams, Link } from 'react-router-dom';
 const AddEmployee = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const navigate = useNavigate();
+  const { id } = useParams();
   const saveEmployee = (e) => {
     e.preventDefault();
     const employee = { firstName, lastName, email };
-    EmployeeService.addEmployee(employee)
-      .then((response) => {
-        navigate('/employees');
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    if (id) {
+      EmployeeService.updateEmployee(id, employee)
+        .then((response) => {
+          navigate('/employees');
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      EmployeeService.addEmployee(employee)
+        .then((response) => {
+          navigate('/employees');
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
   };
+  const title = () => {
+    if (!id) {
+      return <h2 className="text-center">Add Employee</h2>;
+    } else {
+      return <h2 className="text-center">Edit Employee</h2>;
+    }
+  };
+  useEffect(() => {
+    if (id) {
+      EmployeeService.getEmployeeById(id)
+        .then((response) => {
+          setFirstName(response.data.firstName);
+          setLastName(response.data.lastName);
+          setEmail(response.data.email);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }, []);
   return (
     <div>
       <div className="container">
         <div className="row">
           <div className="card col-md-6 offset-md-3 offset-md-3">
-            <h2 className="text-center">Add Employee</h2>
+            {title()}
             <div className="card-body">
               <form>
                 <div className="form-group mb-2">

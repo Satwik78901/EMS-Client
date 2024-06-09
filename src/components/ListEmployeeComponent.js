@@ -7,8 +7,8 @@ const ListEmployeeComponent = () => {
   useEffect(() => {
     EmployeeService.getAllEmployees()
       .then((response) => {
-        setEmployees(respone.data);
-        console.log(respone.data);
+        setEmployees(response.data);
+        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -26,6 +26,7 @@ const ListEmployeeComponent = () => {
           <th>Employee First Name</th>
           <th>Employee Last Name</th>
           <th>Employee Email Id</th>
+          <th>Actions</th>
         </thead>
         <tbody>
           {employees.map((employee) => (
@@ -34,6 +35,14 @@ const ListEmployeeComponent = () => {
               <td>{employee.firstName} </td>
               <td>{employee.lastName} </td>
               <td>{employee.email} </td>
+              <td>
+                <Link
+                  to={`/edit-employee/${employee.id}`}
+                  className="btn btn-info"
+                >
+                  Update
+                </Link>
+              </td>
             </tr>
           ))}
         </tbody>

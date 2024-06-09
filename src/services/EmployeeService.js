@@ -8,5 +8,11 @@ class EmployeeSerivce {
   addEmployee(employee) {
     return axios.post(EMPLOYEE_BASE_URI, employee);
   }
+  getEmployeeById(employeeID) {
+    return axios.get(EMPLOYEE_BASE_URI + '/' + employeeID);
+  }
+  updateEmployee(employeeId, employee) {
+    return axios.put(EMPLOYEE_BASE_URI + '/' + employeeId, employee);
+  }
 }
 export default new EmployeeSerivce();
