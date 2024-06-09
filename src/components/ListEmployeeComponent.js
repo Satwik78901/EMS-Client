@@ -3,8 +3,7 @@ import EmployeeService from '../services/EmployeeService';
 import { Link } from 'react-router-dom';
 const ListEmployeeComponent = () => {
   const [employees, setEmployees] = useState([]);
-
-  useEffect(() => {
+  const displayEmployee = () => {
     EmployeeService.getAllEmployees()
       .then((response) => {
         setEmployees(response.data);
@@ -13,7 +12,19 @@ const ListEmployeeComponent = () => {
       .catch((error) => {
         console.log(error);
       });
+  };
+  useEffect(() => {
+    displayEmployee();
   }, []);
+  const deleteEmployee = (employeeId) => {
+    EmployeeService.deleteEmployeeById(employeeId)
+      .then((response) => {
+        displayEmployee();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="container">
       <h2 className="text-center"> List Employees</h2>
@@ -42,6 +53,15 @@ const ListEmployeeComponent = () => {
                 >
                   Update
                 </Link>
+                <button
+                  className="btn btn-danger"
+                  onClick={() => {
+                    deleteEmployee(employee.id);
+                  }}
+                  style={{ marginLeft: '10px' }}
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
