@@ -29,10 +29,10 @@ const AddEmployee = () => {
     }
   };
   const title = () => {
-    if (!id) {
-      return <h2 className="text-center">Add Employee</h2>;
-    } else {
+    if (id) {
       return <h2 className="text-center">Edit Employee</h2>;
+    } else {
+      return <h2 className="text-center">Add Employee</h2>;
     }
   };
   useEffect(() => {
