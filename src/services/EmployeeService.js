@@ -1,12 +1,12 @@
 import axios from 'axios';
-const EMPLOYEE_BASE_URI = 'http://localhost:8083/api/v1/employees';
+const EMPLOYEE_BASE_URI = 'http://localhost:8084/api/employees';
 
 class EmployeeSerivce {
   getAllEmployees() {
-    return axios.get(EMPLOYEE_BASE_URI);
+    return axios.get(EMPLOYEE_BASE_URI + '/all');
   }
   addEmployee(employee) {
-    return axios.post(EMPLOYEE_BASE_URI, employee);
+    return axios.post(EMPLOYEE_BASE_URI + '/add', employee);
   }
   getEmployeeById(employeeID) {
     return axios.get(EMPLOYEE_BASE_URI + '/' + employeeID);

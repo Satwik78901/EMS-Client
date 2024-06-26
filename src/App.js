@@ -4,13 +4,14 @@ import HeaderComponent from './components/HeaderComponent';
 import FootterComponent from './components/FooterComponent';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AddEmployee from './components/AddEmployee';
+import Login from './components/Login';
 function App() {
   return (
     <div className="App">
       <Router>
         <HeaderComponent />
         <Routes>
-          <Route exact path="/" Component={ListEmployeeComponent}></Route>
+          <Route exact path="/" Component={Login}></Route>
           <Route path="/employees" Component={ListEmployeeComponent}></Route>
           <Route path="/add-employee" Component={AddEmployee}></Route>
           <Route path="/edit-employee/:id" Component={AddEmployee}></Route>
