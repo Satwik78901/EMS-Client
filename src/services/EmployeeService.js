@@ -33,7 +33,7 @@ class EmployeeService {
 
   updateEmployee(employeeId, employee) {
     return axios.put(
-      EMPLOYEE_BASE_URI + '/' + employeeId,
+      EMPLOYEE_BASE_URI + '/update/' + employeeId,
       employee,
       this.getAuthHeaders()
     );
