@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../LoginUser.css';
+import { useNavigate } from 'react-router-dom';
 
 const LoginUser = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -20,10 +22,12 @@ const LoginUser = () => {
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('refreshToken', response.data.refreshToken);
         setMessage('Login successful');
-        // Redirect to another page or perform some actions
+        navigate('/employees'); // Redirect to home or dashboard
       }
     } catch (error) {
-      setMessage('Login failed: ' + error.response.data.error);
+      setMessage(
+        'Login failed: ' + (error.response?.data?.error || error.message)
+      );
     }
   };
 
