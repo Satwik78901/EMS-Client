@@ -1,7 +1,6 @@
 import './App.css';
 import ListEmployeeComponent from './components/ListEmployeeComponent';
 import HeaderComponent from './components/HeaderComponent';
-import FootterComponent from './components/FooterComponent';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AddEmployee from './components/AddEmployee';
 import LoginUser from './components/LoginUser';
@@ -16,7 +15,6 @@ function App() {
           <Route path="/add-employee" Component={AddEmployee}></Route>
           <Route path="/edit-employee/:id" Component={AddEmployee}></Route>
         </Routes>
-        <FootterComponent />
       </Router>
     </div>
   );
