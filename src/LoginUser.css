@@ -1,56 +1,202 @@
 * {
-  background: url();
-}
-.form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid #ccc;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #f9f9f9;
-  width: 400px; /* Adjust the width of the form */
-}
-
-.form input[type='email'],
-.form input[type='password'] {
-  width: 100%; /* Make input fields take up full width of the form */
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
+body {
+  width: 100vw;
+  height: 100vh;
+  background: url('https://wallpapers.com/images/hd/solid-grey-background-with-lighting-5syi2eo8uj4gmvry.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Whitney', sans-serif;
+}
+.position {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.containerForm {
+  width: 784px;
+  max-width: 90vw;
+  padding: 32px;
+  background-color: #2a2b38;
+  background: #363940;
+  border-radius: 6px;
+  left: 0;
+  top: 0;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  flex-grow: 1;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+}
+.input-placeholder {
+  color: #fdfeff;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  text-transform: uppercase;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  cursor: default;
+}
+.centering-wrapper {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  flex: 1 1 auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: flex;
+}
+.section1 {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.primary-header {
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.input-position {
+  margin-top: 20px;
+}
 
-.form button {
-  width: 100%; /* Make button take up full width of the form */
+.form-group {
+  width: 100%;
+  text-align: left;
+}
+.error-message {
+  color: #ec4846;
+  font-style: italic;
+  text-transform: none;
+  font-size: 12px;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  transition: all 0.2s linear;
+}
+
+.form-style {
+  position: relative;
   padding: 10px;
+  height: 40px;
+  width: 414px;
+  max-width: 80vw;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.5px;
+  color: #e5e4ea;
+  background-color: #323338;
+  border: 1px solid #282a2e;
+  border-radius: 3px;
+  outline: none;
+  -webkit-transition: all 200ms linear;
+  transition: border-color 0.2s ease-in-out;
+}
+.button-position {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+.button-style {
+  text-decoration: none;
+  border-radius: 4px;
+  height: 44px;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: capitalize;
+  transition: all 200ms linear;
+  letter-spacing: 1px;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   border: none;
-  margin-top: 10px;
-  border-radius: 5px;
-  background-color: #ff0000;
+  outline: none;
+  background-color: #0a92f3;
   color: white;
   cursor: pointer;
 }
-
-.form button:hover {
-  background-color: #0056b3;
+.password-container {
+  display: block;
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 20px;
+  margin-top: 4px;
+  width: 100%;
+  height: auto;
+  padding: 2px 90% 2px 0px;
+  position: relative;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
 }
-
-.form div {
-  width: 100%; /* Ensure all divs inside form take up full width */
+.link {
+  color: #0a92f3;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0 auto;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
-
-.form label {
-  margin-left: 5px;
-}
-.formClass {
-  width: 350px;
+.link:hover {
+  text-decoration: underline;
 }

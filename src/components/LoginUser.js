@@ -32,38 +32,56 @@ const LoginUser = () => {
   };
 
   return (
-    <div className="form-container">
-      <div className="form">
-        <h2>Sign In</h2>
-        <form onSubmit={handleLogin} className="formClass">
-          <div>
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+    <div className="position">
+      <form onSubmit={handleLogin} className="containerForm">
+        <div className="centering-wrapper">
+          <div className="section1 text-wrapper">
+            <div className="primary-header">Welcome Back!</div>
+            <div className="input-position">
+              <div className="form-group">
+                <h5 className="input-placeholder" id="email-txt">
+                  Email<span className="error-message" id="email-error"></span>
+                </h5>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="form-style"
+                  style={{ marginBottom: '20px' }}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+            </div>
+            <div className="form-group">
+              <h5 className="input-placeholder" id="email-txt">
+                Password<span className="error-message" id="email-error"></span>
+              </h5>
+              <input
+                type="password"
+                className="form-style"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <div className="password-container">
+              {' '}
+              <a href="/password" className="link">
+                Forgot your password?
+              </a>
+            </div>
+            <div className="button-position">
+              <button type="submit" className="button-style">
+                {' '}
+                Login
+              </button>
+            </div>
           </div>
-          <div>
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-          <div>
-            <input type="checkbox" id="stayLoggedIn" />
-            <label htmlFor="stayLoggedIn">Stay logged in</label>
-          </div>
-          <div>
-            <button type="submit">Sign In</button>
-          </div>
-        </form>
-        {message && <p>{message}</p>}
-      </div>
+        </div>
+      </form>
+      {message && <p>{message}</p>}
     </div>
   );
 };
