@@ -3,14 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
+.backgroundWrap {
   width: 100vw;
   height: 100vh;
-  background: url('https://wallpapers.com/images/hd/solid-grey-background-with-lighting-5syi2eo8uj4gmvry.jpg');
+  background: rgb(14, 13, 13);
   background-size: cover;
   background-repeat: no-repeat;
   font-family: 'Whitney', sans-serif;
 }
+
 .position {
   position: absolute;
   width: 100vw;
