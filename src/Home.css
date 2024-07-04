@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.backgroundWrap {
+  font-family: 'Whitney', sans-serif;
+  background-color: black;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.buttonsPosition {
+  display: flex;
+  align-items: center;
+}
+
+.buttonsPosition button {
+  margin-left: 10px;
+}
