@@ -8,11 +8,10 @@ const Home = () => {
     <div className="backgroundWrap">
       <div className="buttonsPosition">
         <Link to="/Login">
-          <button>Login</button>
+          <button className="button-styles">Login</button>
         </Link>
-
-        <button>Feautures</button>
-        <button>Contact</button>
+        <button className="button-styles">Feautures</button>
+        <button className="button-styles">Contact</button>
       </div>
     </div>
   );
