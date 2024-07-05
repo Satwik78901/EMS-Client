@@ -23,3 +23,8 @@
 .buttonsPosition button {
   margin-left: 10px;
 }
+.button-styles {
+  background-color: #0a92f3;
+  color: white;
+  padding: 12px 20px;
+}
