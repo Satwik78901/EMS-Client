@@ -28,3 +28,23 @@
   color: white;
   padding: 12px 20px;
 }
+.contentWrap {
+  max-width: 75%;
+  margin-top: 100px;
+  color: white;
+}
+
+.contentWrap h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.contentWrap h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+.contentWrap p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
