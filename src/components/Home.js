@@ -5,24 +5,6 @@ import '../Home.css';
 const Home = () => {
   return (
     <div className="backgroundWrap">
-      <div className="contentWrap">
-        <h1>Welcome to the Employee Management System (EMS)</h1>
-        <h2>Your Gateway to Efficient Employee Management</h2>
-        <p>
-          Our Employee Management System (EMS) is a powerful tool designed to
-          help administrators efficiently manage employee records and
-          attendance. With a user-friendly interface and comprehensive
-          capabilities, EMS simplifies your administrative tasks and enhances
-          productivity.
-        </p>
-        <p>
-          Ready to experience the efficiency and ease of our EMS? Click on the{' '}
-          <b>Login</b> button to access your dashboard. If you are new to EMS
-          and want to learn more, explore our <b>Features</b> page to discover
-          what we offer. For any inquiries, visit our <b>Contact</b> page and
-          get in touch with us.
-        </p>
-      </div>
       <div className="buttonsPosition">
         <Link to="/Login">
           <button className="button-styles">Login</button>
@@ -33,6 +15,28 @@ const Home = () => {
         <Link to="/Contact">
           <button className="button-styles">Contact</button>
         </Link>
+      </div>
+      <div className="position">
+        <div className="contentWrap">
+          <div className="containerWrap">
+            <h1>Welcome to the Employee Management System (EMS)</h1>
+            <h2>Your Gateway to Efficient Employee Management</h2>
+            <p>
+              Our Employee Management System (EMS) is a powerful tool designed
+              to help administrators efficiently manage employee records and
+              attendance. With a user-friendly interface and comprehensive
+              capabilities, EMS simplifies your administrative tasks and
+              enhances productivity.
+            </p>
+            <p>
+              Ready to experience the efficiency and ease of our EMS? Click on
+              the <b>Login</b> button to access your dashboard. If you are new
+              to EMS and want to learn more, explore our <b>Features</b> page to
+              discover what we offer. For any inquiries, visit our{' '}
+              <b>Contact</b> page and get in touch with us.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
