@@ -43,18 +43,27 @@ html {
 }
 
 .button-styles {
-  background-color: #0a92f3;
-  color: white;
-  padding: 12px 20px;
-  border: none;
+  border: 1px solid #007bff;
+  background-color: transparent;
+  color: #007bff;
+  padding-right: 1.5rem;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  border-radius: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .button-styles:hover {
-  background-color: #007acc;
+  background-color: #007bff;
+  color: white;
 }
 
 .contentWrap {
@@ -77,21 +86,23 @@ html {
   max-width: 600px;
 }
 
-.waviy {
-  position: relative;
+.flicker {
+  font-size: 50px;
+  font-family: 'Merienda', sans-serif;
+  margin: 1rem auto;
+  color: #007bff;
+  background: linear-gradient(to right, #e6e6e6, #1d1c1c, #ff0000);
+  background-size: 110px 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: flick 1.2s infinite;
 }
-.waviy span {
-  position: relative;
-  display: inline-block;
-  font-size: 40px;
-  color: #fff;
-  text-transform: uppercase;
-  animation: flip 2s infinite;
-  animation-delay: calc(0.2s * var(--i));
-}
-@keyframes flip {
-  0%,
-  80% {
-    transform: rotateY(360deg);
+
+@keyframes flick {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
   }
 }
