@@ -21,7 +21,11 @@ const Home = () => {
         <img src={myImage} alt="Employee" className="image-adjust" />
         <div className="text-position">
           <div className="content">
-            <h2>Employee Management</h2>
+            <div class="wrapper six">
+              <div>
+                <h3 class="flicker">Employee Management</h3>
+              </div>
+            </div>
           </div>
 
           <h2>Your Gateway to Efficient Employee Management</h2>
