@@ -26,23 +26,22 @@ const Home = () => {
                 <h3 class="flicker">Employee Management</h3>
               </div>
             </div>
+            <h2>Your Gateway to Efficient Employee Management</h2>
+            <p>
+              Our Employee Management System (EMS) is a powerful tool designed
+              to help administrators efficiently manage employee records and
+              attendance. With a user-friendly interface and comprehensive
+              capabilities, EMS simplifies your administrative tasks and
+              enhances productivity.
+            </p>
+            <p>
+              Ready to experience the efficiency and ease of our EMS? Click on
+              the <b>Login</b> button to access your dashboard. If you are new
+              to EMS and want to learn more, explore our <b>Features</b> page to
+              discover what we offer. For any inquiries, visit our{' '}
+              <b>Contact</b> page and get in touch with us.
+            </p>
           </div>
-
-          <h2>Your Gateway to Efficient Employee Management</h2>
-          <p>
-            Our Employee Management System (EMS) is a powerful tool designed to
-            help administrators efficiently manage employee records and
-            attendance. With a user-friendly interface and comprehensive
-            capabilities, EMS simplifies your administrative tasks and enhances
-            productivity.
-          </p>
-          <p>
-            Ready to experience the efficiency and ease of our EMS? Click on the{' '}
-            <b>Login</b> button to access your dashboard. If you are new to EMS
-            and want to learn more, explore our <b>Features</b> page to discover
-            what we offer. For any inquiries, visit our <b>Contact</b> page and
-            get in touch with us.
-          </p>
         </div>
       </div>
     </div>
