@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import EmployeeService from '../services/EmployeeService';
 import { Link } from 'react-router-dom';
+import EmployeeActions from './EmployeeActions.js';
 import '../ListEmployee.css';
-const ListEmployeeComponent = () => {
+
+const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
-  const displayEmployee = () => {
+
+  const fetchEmployees = () => {
     EmployeeService.getAllEmployees()
       .then((response) => {
         setEmployees(response.data);
@@ -14,18 +17,11 @@ const ListEmployeeComponent = () => {
         console.log(error);
       });
   };
+
   useEffect(() => {
-    displayEmployee();
+    fetchEmployees();
   }, []);
-  const deleteEmployee = (employeeId) => {
-    EmployeeService.deleteEmployeeById(employeeId)
-      .then((response) => {
-        displayEmployee();
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+
   return (
     <div className="containerTable">
       <h2 className="text-center">List Employees</h2>
@@ -44,30 +40,16 @@ const ListEmployeeComponent = () => {
         </thead>
         <tbody>
           {employees.map((employee) => (
-            <tr key={employee.id}>
-              <td>{employee.id}</td>
-              <td>{employee.firstName}</td>
-              <td>{employee.lastName}</td>
-              <td>{employee.email}</td>
-              <td>
-                <Link
-                  to={`/edit-employee/${employee.id}`}
-                  className="btn btn-update"
-                >
-                  Update
-                </Link>
-                <button
-                  className="btn btn-delete"
-                  onClick={() => deleteEmployee(employee.id)}
-                >
-                  Delete
-                </button>
-              </td>
-            </tr>
+            <EmployeeActions
+              key={employee.id}
+              employee={employee}
+              fetchEmployees={fetchEmployees}
+            />
           ))}
         </tbody>
       </table>
     </div>
   );
 };
-export default ListEmployeeComponent;
+
+export default EmployeeList;
